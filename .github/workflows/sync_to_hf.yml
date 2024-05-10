@@ -1,10 +1,10 @@
-name: sync_to_hf_hub
+name: Sync to Hugging Face hub
 on:
 
   # To run this workflow manually from the Actions tab
   workflow_dispatch:
 
-  # Schedule the workflow to run at 02:01 UTC everyday
+  # Schedule the workflow to run at 23:59 everyday
   schedule:
     - cron: '01 02 * * *' 
   
@@ -24,4 +24,4 @@ jobs:
         env:
           HOPSWORKS_API_KEY: ${{ secrets.HOPSWORKS_API_KEY }}
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push --force https://HF_USERNAME:$HF_TOKEN@huggingface.co/spaces/Camillahannesbo/electricity_price main
+        run: git push --force https://HF_USERNAME:$HF_TOKEN@huggingface.co/spaces/benj3037/MLOPs-Assignment main
